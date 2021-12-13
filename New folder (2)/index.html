@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="box">
+        <h1>Animal Pictures</h1>
+
+        <div class="catdog">
+            <div class="catbox">
+
+            </div>
+            <div class="dogbox">
+
+            </div>
+        </div>
+        <div class="buttons">
+            <div>
+                <button id="catbutton" class="catbutton">Cat</button>
+            </div>
+            <div>
+                <button id="dogbutton" class="dogbutton">Dog</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"
+        integrity="sha512-1Gn7//DzfuF67BGkg97Oc6jPN6hqxuZXnaTpC9P5uw8C6W4yUNj5hoS/APga4g1nO2X6USBb/rXtGzADdaVDeA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        let catBtn = document.getElementById("catbutton")
+        let catBox = document.querySelector(".catbox")
+        let dogBox = document.querySelector(".dogbox")
+
+        catBtn.onclick = function () {
+            fetch('https://aws.random.cat/meow')
+                .then(response => response.json())
+                .then(data => {
+                    catBox.innerHTML = ""
+                    let img = document.createElement("img")
+                    img.classList.add("images")
+                    img.setAttribute("src", data.file)
+                    catBox.appendChild(img)
+                });
+        }
+
+        let dogBtn = document.getElementById("dogbutton")
+        dogBtn.onclick = function () {
+            fetch('https://dog.ceo/api/breeds/image/random')
+                .then(response => response.json())
+                .then(data => {
+                    dogBox.innerHTML = ""
+                    let img = document.createElement("img")
+                    img.classList.add("images")
+                    img.setAttribute("src", data.message)
+                    dogBox.appendChild(img)
+                });
+        }
+    </script>
+</body>
+
+</html>

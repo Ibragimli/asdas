@@ -1,0 +1,57 @@
+body{
+    background-color: beige;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box{
+    width: 600px;
+    height: 400px;
+    text-align: center;
+}
+h1{
+    color: salmon;
+    font-weight: 700;
+}
+
+.catdog{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.catbox{
+    width: 150px;
+    height: 150px;
+    border: 1px solid red;
+}
+
+.dogbox{
+    width: 150px;
+    height: 150px;
+    border: 1px solid red;
+}
+
+.buttons{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px;
+    
+}
+.catbutton{
+    width: 120px;
+    height: 30px;
+    background-color: orangered;
+}
+.dogbutton{
+    width: 120px;
+    height: 30px;
+    background-color: orangered;
+}
+.images{
+    width: 100%;
+    height: 100%;
+}
